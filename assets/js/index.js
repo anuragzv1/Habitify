@@ -1,3 +1,5 @@
+
+//function to add new Habits
 async function addNewHabit() {
 
     let newHabitName = document.getElementById('newHabitName').value;
@@ -32,7 +34,7 @@ async function addNewHabit() {
         console.log(day);
         daysBefore[i] = day;
     }
-
+    //dynamically adding the newly created 
     let htmlString = `<div class="listitem" onclick="window.location.href='/habit?id=${res.data._id}'" >
         <div class="listtitle">${newHabitName}</div>
         <div class="list-day-container">
@@ -81,13 +83,13 @@ async function addNewHabit() {
     newHabitDiv.style.display = "none";
 }
 
-
+//show the div to add a new habit
 function showHabitAdd() {
     let newHabitDiv = document.querySelector('.new-habit-div');
     newHabitDiv.style.display = "flex";
 }
 
-
+//function to delte a habit
 async function deletehabit(event , habit_id){
     console.log('delete', habit_id);
     event.stopPropagation();

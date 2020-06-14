@@ -11,12 +11,14 @@
 
 <body>
     <div id="main">
+        <!-- //dynamic habit name loaded form locals -->
         <h3><%= habit.name %></h3>
         <div class="history">
             <span id="historyspan">History</span><br>
             <div class="calendar-div">
                 <% for(let x=0;x<30;x++){ %>
                 <div class="listday">
+                    <!-- //dynamically setting colors of the days in calendar according to the status of them -->
                     <span class="daytitle"><%= getStaticDay(x) %></span> <br>
                     <span id="<%= getDate(x)%>" onclick="toggleState('<%= getDate(x)%>','<%= habit._id%>')"
                         <% if(success(x , habit.succeson)){ %> style="background-color:#5666F3;color:white" <%}%>

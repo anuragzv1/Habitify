@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const e = require('express');
 
-
+//mongodb config hosted on Mongo Atlas
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://habitifydb:habitifydb@habitify-fimxe.mongodb.net/habitifydb?retryWrites=true&w=majority";

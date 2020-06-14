@@ -1,3 +1,4 @@
+//function to toggle the states of the habit 
 async function toggleState(date, habit_id) {
     let nextState = await fetch('/togglestate', {
         method: 'POST',

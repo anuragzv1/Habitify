@@ -1,5 +1,5 @@
 const Habit = require('../models/habit');
-
+//function to create a new habit in database
 module.exports.createhabit = async function (req, res) {
     console.log(req.body);
     
@@ -16,7 +16,7 @@ module.exports.createhabit = async function (req, res) {
     }
 }
 
-
+//function to delete a habit from database
 module.exports.deletehabit = async function(req,res){
     try{
         let deletehabit = await Habit.findOneAndDelete(req.body.id);

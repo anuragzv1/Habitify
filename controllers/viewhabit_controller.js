@@ -1,6 +1,6 @@
 
 const Habit = require('../models/habit');
-
+//view habit contrller to render habit view with all habits 
 module.exports = async function (req, res) {
     var habit_id = req.query.id;
     console.log(habit_id);
@@ -17,7 +17,7 @@ module.exports = async function (req, res) {
         }
     }
 }
-
+//module to toggle the state of the days 
 module.exports.togglestate = async function (req, res) {
     console.log(req.body);
 
