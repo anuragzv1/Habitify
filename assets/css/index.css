@@ -57,8 +57,10 @@ body{
     color: white;
     font-size: 21px;
     margin-left: 10px;
-    display: block;
+    margin-right:15px;
+    display: flex;
     margin-top: 10px;
+    justify-content: space-between;
 }
 
 .daytitle{
@@ -134,4 +136,14 @@ body{
     width: 100px;
     outline: 0;
     cursor: pointer;
+}
+
+.delbtn{
+    background-color: transparent;
+    border:0;
+    outline: 0;
+    cursor: pointer;
+}
+.delbtn :hover{
+    color:white;
 }

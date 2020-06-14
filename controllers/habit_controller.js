@@ -15,3 +15,14 @@ module.exports.createhabit = async function (req, res) {
         return res.status(200).send({ "status": "error", message: "Cannot create Habit" });
     }
 }
+
+
+module.exports.deletehabit = async function(req,res){
+    try{
+        let deletehabit = await Habit.findOneAndDelete(req.body.id);
+        return res.send(200,{status:'success'});
+
+    }catch(err){
+        return res.send(200 , {status:'error'});
+    }
+}

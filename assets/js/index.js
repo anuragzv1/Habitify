@@ -86,3 +86,26 @@ function showHabitAdd() {
     let newHabitDiv = document.querySelector('.new-habit-div');
     newHabitDiv.style.display = "flex";
 }
+
+
+async function deletehabit(event , habit_id){
+    console.log('delete', habit_id);
+    event.stopPropagation();
+
+    let deletedHabit = await fetch('/deletehabit', {
+        method:'POST',
+        headers:{
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify({
+            id:habit_id
+        })
+    });
+
+    let deleteJson = await(deletedHabit.json());
+
+    if(deleteJson.status=='success'){
+        document.getElementById('post-'+habit_id).remove();
+    }
+    else alert('error deleting habit!');
+}
