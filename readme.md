@@ -4,4 +4,4 @@ Url : https://habitify-anurag.herokuapp.com/
 
 habitify is an awesome habit tracker built using node.js
 
-![habitify.png]
+![habitify.png](/assets/habitify.png)
