@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Habitify - Build new habits</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/habit.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+</head>
+
+<body>
+    <div id="main">
+        <h3><%= habit.name %></h3>
+        <div class="history">
+            <span id="historyspan">History</span><br>
+            <div class="calendar-div">
+                <% for(let x=0;x<30;x++){ %>
+                <div class="listday">
+                    <span class="daytitle"><%= getStaticDay(x) %></span> <br>
+                    <span id="<%= getDate(x)%>" onclick="toggleState('<%= getDate(x)%>','<%= habit._id%>')"
+                        <% if(success(x , habit.succeson)){ %> style="background-color:#5666F3;color:white" <%}%>
+                                        <% if(fail(x , habit.failon)){ %>
+                        style="background-color:red;color:white;border:1.5px solid red" <%}%>
+                                        class="daynumber"><%= getStaticDate(x) %></span>
+                </div>
+                <% }%>
+            </div>
+        </div><br><br>
+        <i style="cursor: pointer;" onclick="window.location.href='/'" class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <script src="../assets/js/habit.js"></script>
+</body>
+
+</html>
